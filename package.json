@@ -38,7 +38,6 @@
 
   },
 
-  "precommit" : ["build"],
   "author": "Sebastian Holstein <info@sebastian-holstein.de>",
   "license": "MIT",
   "bugs": {
