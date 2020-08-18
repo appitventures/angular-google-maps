@@ -133,7 +133,7 @@ export class AgmMarkerCluster implements OnDestroy, OnChanges, OnInit, MarkerClu
    */
   @Input() title: string;
 
-  @Output() clusterClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() clusterClick: EventEmitter<this> = new EventEmitter<this>();
 
   private _observableSubscriptions: Subscription[] = [];
 
@@ -198,7 +198,7 @@ export class AgmMarkerCluster implements OnDestroy, OnChanges, OnInit, MarkerClu
     const handlers = [
       {
         name: 'clusterclick',
-        handler: () => this.clusterClick.emit(),
+        handler: (args) => this.clusterClick.emit(args),
       },
     ];
     handlers.forEach((obj) => {
